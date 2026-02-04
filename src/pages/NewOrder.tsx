@@ -15,6 +15,7 @@ interface MenuItem {
   price: number;
   category: Category;
   prepTime: string;
+  image: string;
 }
 
 interface OrderItem extends MenuItem {
@@ -23,20 +24,20 @@ interface OrderItem extends MenuItem {
 }
 
 const menuItems: MenuItem[] = [
-  { id: "1", name: "Spring Rolls", price: 350, category: "appetizers", prepTime: "10 mins" },
-  { id: "2", name: "Chicken Soup", price: 400, category: "appetizers", prepTime: "15 mins" },
-  { id: "3", name: "Fish Cutlets", price: 450, category: "appetizers", prepTime: "12 mins" },
-  { id: "4", name: "Chicken Biryani", price: 850, category: "main", prepTime: "25 mins" },
-  { id: "5", name: "Fish Curry", price: 650, category: "main", prepTime: "20 mins" },
-  { id: "6", name: "Vegetable Fried Rice", price: 450, category: "main", prepTime: "15 mins" },
-  { id: "7", name: "Kottu Roti", price: 550, category: "main", prepTime: "18 mins" },
-  { id: "8", name: "Prawns Devilled", price: 950, category: "main", prepTime: "22 mins" },
-  { id: "9", name: "Watalappan", price: 250, category: "desserts", prepTime: "5 mins" },
-  { id: "10", name: "Ice Cream", price: 200, category: "desserts", prepTime: "3 mins" },
-  { id: "11", name: "Fruit Salad", price: 300, category: "desserts", prepTime: "5 mins" },
-  { id: "12", name: "Lime Juice", price: 150, category: "drinks", prepTime: "3 mins" },
-  { id: "13", name: "King Coconut", price: 180, category: "drinks", prepTime: "2 mins" },
-  { id: "14", name: "Fresh Mango Juice", price: 220, category: "drinks", prepTime: "5 mins" },
+  { id: "1", name: "Spring Rolls", price: 350, category: "appetizers", prepTime: "10 mins", image: "https://images.unsplash.com/photo-1544025162-d76694265947?w=200&h=150&fit=crop" },
+  { id: "2", name: "Chicken Soup", price: 400, category: "appetizers", prepTime: "15 mins", image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=200&h=150&fit=crop" },
+  { id: "3", name: "Fish Cutlets", price: 450, category: "appetizers", prepTime: "12 mins", image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=200&h=150&fit=crop" },
+  { id: "4", name: "Chicken Biryani", price: 850, category: "main", prepTime: "25 mins", image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=200&h=150&fit=crop" },
+  { id: "5", name: "Fish Curry", price: 650, category: "main", prepTime: "20 mins", image: "https://images.unsplash.com/photo-1626776877260-5765ca4c3489?w=200&h=150&fit=crop" },
+  { id: "6", name: "Vegetable Fried Rice", price: 450, category: "main", prepTime: "15 mins", image: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=200&h=150&fit=crop" },
+  { id: "7", name: "Kottu Roti", price: 550, category: "main", prepTime: "18 mins", image: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=200&h=150&fit=crop" },
+  { id: "8", name: "Prawns Devilled", price: 950, category: "main", prepTime: "22 mins", image: "https://images.unsplash.com/photo-1559737558-2f5a35f4523b?w=200&h=150&fit=crop" },
+  { id: "9", name: "Watalappan", price: 250, category: "desserts", prepTime: "5 mins", image: "https://images.unsplash.com/photo-1551024601-bec78aea704b?w=200&h=150&fit=crop" },
+  { id: "10", name: "Ice Cream", price: 200, category: "desserts", prepTime: "3 mins", image: "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=200&h=150&fit=crop" },
+  { id: "11", name: "Fruit Salad", price: 300, category: "desserts", prepTime: "5 mins", image: "https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?w=200&h=150&fit=crop" },
+  { id: "12", name: "Lime Juice", price: 150, category: "drinks", prepTime: "3 mins", image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=200&h=150&fit=crop" },
+  { id: "13", name: "King Coconut", price: 180, category: "drinks", prepTime: "2 mins", image: "https://images.unsplash.com/photo-1544252890-c81c86ae4283?w=200&h=150&fit=crop" },
+  { id: "14", name: "Fresh Mango Juice", price: 220, category: "drinks", prepTime: "5 mins", image: "https://images.unsplash.com/photo-1546173159-315724a31696?w=200&h=150&fit=crop" },
 ];
 
 const NewOrder = () => {
@@ -152,17 +153,24 @@ const NewOrder = () => {
               {filteredItems.map((item) => (
                 <div
                   key={item.id}
-                  className="bg-card border rounded-xl p-4 flex items-center justify-between hover:shadow-md transition-shadow animate-fade-in"
+                  className="bg-card border rounded-xl overflow-hidden flex hover:shadow-md transition-shadow animate-fade-in"
                 >
-                  <div>
-                    <h3 className="font-semibold">{item.name}</h3>
-                    <p className="text-primary font-bold">LKR {item.price.toLocaleString()}</p>
-                    <p className="text-xs text-muted-foreground">{item.prepTime}</p>
+                  <img 
+                    src={item.image} 
+                    alt={item.name}
+                    className="w-24 h-24 object-cover flex-shrink-0"
+                  />
+                  <div className="flex-1 p-4 flex items-center justify-between">
+                    <div>
+                      <h3 className="font-semibold">{item.name}</h3>
+                      <p className="text-primary font-bold">LKR {item.price.toLocaleString()}</p>
+                      <p className="text-xs text-muted-foreground">{item.prepTime}</p>
+                    </div>
+                    <Button size="sm" onClick={() => addItem(item)}>
+                      <Plus className="w-4 h-4 mr-1" />
+                      Add
+                    </Button>
                   </div>
-                  <Button size="sm" onClick={() => addItem(item)}>
-                    <Plus className="w-4 h-4 mr-1" />
-                    Add
-                  </Button>
                 </div>
               ))}
             </div>
