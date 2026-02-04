@@ -28,7 +28,7 @@ const menuItems: MenuItem[] = [
   { id: "2", name: "Chicken Soup", price: 400, category: "appetizers", prepTime: "15 mins", image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=200&h=150&fit=crop" },
   { id: "3", name: "Fish Cutlets", price: 450, category: "appetizers", prepTime: "12 mins", image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=200&h=150&fit=crop" },
   { id: "4", name: "Chicken Biryani", price: 850, category: "main", prepTime: "25 mins", image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=200&h=150&fit=crop" },
-  { id: "5", name: "Fish Curry", price: 650, category: "main", prepTime: "20 mins", image: "https://images.unsplash.com/photo-1626776877260-5765ca4c3489?w=200&h=150&fit=crop" },
+  { id: "5", name: "Fish Curry", price: 650, category: "main", prepTime: "20 mins", image: "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=200&h=150&fit=crop" },
   { id: "6", name: "Vegetable Fried Rice", price: 450, category: "main", prepTime: "15 mins", image: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=200&h=150&fit=crop" },
   { id: "7", name: "Kottu Roti", price: 550, category: "main", prepTime: "18 mins", image: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=200&h=150&fit=crop" },
   { id: "8", name: "Prawns Devilled", price: 950, category: "main", prepTime: "22 mins", image: "https://images.unsplash.com/photo-1559737558-2f5a35f4523b?w=200&h=150&fit=crop" },
